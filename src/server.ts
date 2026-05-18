@@ -1,5 +1,6 @@
 import { createServer, IncomingMessage, Server } from "http";
 import { routeHandler } from "./routes/route";
+import config from "./config";
 
 const server: Server = createServer((req: IncomingMessage, res) => {
   // here we have create the server and declare the type"Server"
@@ -24,6 +25,6 @@ const server: Server = createServer((req: IncomingMessage, res) => {
 });
 
 // aikhen server ta listen kortesi
-server.listen(5000, () => {
-  console.log("server is ruinning on the port 5000");
+server.listen(config.port, () => {
+  console.log("server is ruinning on the port",config.port);
 });
